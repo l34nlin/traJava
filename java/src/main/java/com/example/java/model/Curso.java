@@ -11,8 +11,17 @@ public class Curso {
     private Long id;
     private String nome;
 
-    @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL)
-    private List<Disciplina> disciplinas;
+    @ManyToOne
+    @JoinColumn(name = "disciplina")
+    private Disciplina disciplina ;
+
+    public Disciplina getDisciplina() {
+        return disciplina;
+    }
+
+    public void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
+    }
 
     public Long getId() {
         return id;
@@ -30,11 +39,4 @@ public class Curso {
         this.nome = nome;
     }
 
-    public List<Disciplina> getDisciplinas() {
-        return disciplinas;
-    }
-
-    public void setDisciplinas(List<Disciplina> disciplinas) {
-        this.disciplinas = disciplinas;
-    }
 }

@@ -17,9 +17,9 @@ public class BoletimController {
 
     @GetMapping("/{alunoId}")
     public ResponseEntity<Aluno> getBoletim(@PathVariable Long alunoId) {
-        // lógica para calcular e retornar o boletim
+
         Aluno aluno = alunoService.getAlunoById(alunoId);
-        // realizar o cálculo do status aprovado/reprovado e outras lógicas necessárias
+
         return ResponseEntity.ok(aluno);
     }
 }

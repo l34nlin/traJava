@@ -22,7 +22,7 @@ public class CursoService {
     }
 
     public Curso createCurso(Curso curso) {
-        // Lógica de validação, se necessário
+
         return cursoRepository.save(curso);
     }
 
@@ -32,12 +32,12 @@ public class CursoService {
         if (cursoExistente != null) {
             cursoExistente.setNome(cursoAtualizado.getNome());
 
-            // Outros campos a serem atualizados, se necessário
+
 
             return cursoRepository.save(cursoExistente);
         }
 
-        return null; // Ou lançar uma exceção se desejar
+        return null;
     }
 
     public void deleteCurso(Long id) {

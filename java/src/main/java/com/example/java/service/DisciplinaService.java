@@ -21,7 +21,7 @@ public class DisciplinaService {
     }
 
     public Disciplina createDisciplina(Disciplina disciplina) {
-        // Lógica de validação, se necessário
+
         return disciplinaRepository.save(disciplina);
     }
 
@@ -30,12 +30,9 @@ public class DisciplinaService {
 
         if (disciplinaExistente != null) {
             disciplinaExistente.setNome(disciplinaAtualizada.getNome());
-            // Outros campos a serem atualizados, se necessário
-
             return disciplinaRepository.save(disciplinaExistente);
         }
-
-        return null; // Ou lançar uma exceção se desejar
+        return null;
     }
 
     public void deleteDisciplina(Long id) {

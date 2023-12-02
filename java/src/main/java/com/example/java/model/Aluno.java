@@ -11,13 +11,24 @@ public class Aluno {
     private Long id;
     private String nome;
     private int idade;
+    private Boolean statusAtivo;
     private String comentarios;
     private double nota;
     private boolean aprovado;
 
+
     @ManyToOne
     @JoinColumn(name = "curso_id")
-    private Curso curso;
+    private Curso curso ;
+
+
+    public Boolean getStatusAtivo() {
+        return statusAtivo;
+    }
+
+    public void setStatusAtivo(Boolean statusAtivo) {
+        this.statusAtivo = statusAtivo;
+    }
 
     public Long getId() {
         return id;
